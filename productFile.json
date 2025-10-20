@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "description": "lunch",
+    "amount": "200",
+    "createdAt": "2025-10-19T03:49:26.259Z"
+  },
+  {
+    "id": 5,
+    "description": "-burger",
+    "amount": "500",
+    "createdAt": "2025-10-20T17:02:46.366Z"
+  },
+  {
+    "id": 6,
+    "description": "-burger",
+    "amount": "500",
+    "createdAt": "2025-10-20T17:02:59.790Z"
+  }
+]
