@@ -1,4 +1,4 @@
-// ...existing code...
+
 # Expense Tracker CLI
 
 Simple command-line tool to record and view expenses.
@@ -58,3 +58,4 @@ $ expense-tracker add --description "Dinner" --amount 10
 $ expense-tracker summary
 # Total expenses: $30
 ```
+](https://roadmap.sh/projects/expense-tracker)
