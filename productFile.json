@@ -16,5 +16,11 @@
     "description": "-burger",
     "amount": "500",
     "createdAt": "2025-10-20T17:02:59.790Z"
+  },
+  {
+    "id": 7,
+    "description": "Lunch",
+    "amount": "20",
+    "createdAt": "2025-10-21T01:27:22.132Z"
   }
 ]

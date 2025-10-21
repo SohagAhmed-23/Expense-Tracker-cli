@@ -7,6 +7,15 @@ const program = new Command();
 
 
 const  addProduct = (description, price) => {
+  if(price === undefined || description === undefined) {
+    console.log('Description and Price are required fields');
+    return;
+  }
+  if(price <=0 ) {
+    console.log('Price should be greater than zero');
+    return;
+  }
+
 
   if(!fs.existsSync('productFile.json')) {
      const product =[{
@@ -92,15 +101,30 @@ const deleteProduct = (id) => {
 };
 
 
-const summary = () => {
+const summary = (month) => {
   const data =  JSON.parse(fs.readFileSync('productFile.json','utf-8'));
   let sum = 0;
    data.map(element => {
-
+      const elementMonth = new Date(element.createdAt).getMonth()+1;
+      if(elementMonth == month || month === undefined)
       sum+=Number(element.amount);
     });
 
   console.log(`Total expenses: $${sum}`)
+}
+const summaryList = () => {
+  const data =  JSON.parse(fs.readFileSync('productFile.json','utf-8'));
+  if(data.length ===0) {
+    console.log('No expenses found');
+    return;
+  }
+   console.log('ID | Date | Description | Amount');
+
+   data.map(element => {
+
+      console.log(`${element.id} | ${element.createdAt}| ${element.description} | $${element.amount} `);
+    });
+
 }
 
 program
@@ -133,15 +157,16 @@ program
    program
   .command('summary')
   .description('summary an expense')
+  .option('-m, --month <desc>', 'Add description')
   .action((options) => {
-    summary();
+    summary(options.month);
   });
 
     program
   .command('list')
   .description('list an expense')
   .action((options) => {
-    summary();
+    summaryList();
   });
 
 
