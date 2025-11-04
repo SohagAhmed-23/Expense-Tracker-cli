@@ -6,7 +6,7 @@ const { json } = require('stream/consumers');
 const program = new Command();
 
 
-const  addProduct = (description, price) => {
+const  ProAdd = (description, price) => {
   if(price === undefined || description === undefined) {
     console.log('Description and Price are required fields');
     return;
@@ -134,7 +134,7 @@ program
   .option('-p, --price <value>', 'Add price')
   .action((options) => {
     
-    addProduct(options.description,options.price);
+    ProAdd(options.description,options.price);
   });
 
   program
